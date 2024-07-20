@@ -13,7 +13,7 @@
             layers: [
                 new TileLayer({
                     source: new XYZ({
-                        url: "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                        url: "https://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
                     }),
                 }),
             ],
