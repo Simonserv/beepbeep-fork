@@ -1,7 +1,8 @@
 <script lang="ts">
     import "../app.css";
     import { Navbar, NavBrand, NavLi, NavUl, NavHamburger } from 'flowbite-svelte';
-    import ConnectWallet from "./ConnectWallet.svelte";
+    import WalletAdapter from "./WalletAdapter.svelte";
+    //import ConnectWallet from "./ConnectWallet.svelte";
 </script>
 
 <Navbar>
@@ -15,6 +16,6 @@
     <NavUl>
         <NavLi href="/">Home</NavLi>
         <NavLi href="/map">Map</NavLi>
-        <ConnectWallet/>
+        <WalletAdapter/>
     </NavUl>
 </Navbar>
