@@ -5,6 +5,11 @@
     import XYZ from "ol/source/XYZ";
     import { onMount } from "svelte";
 
+    enum map_themes {
+        LIGHT_MODE =  "https://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+        DARK_MODE = "https://{a-c}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+    };
+
     let mapElement: HTMLElement;
     let mountedMap: Map;
     onMount(() => {
@@ -13,7 +18,7 @@
             layers: [
                 new TileLayer({
                     source: new XYZ({
-                        url: "https://{a-c}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                        url: map_themes.DARK_MODE,
                     }),
                 }),
             ],
