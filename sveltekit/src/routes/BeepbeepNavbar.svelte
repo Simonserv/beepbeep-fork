@@ -16,6 +16,7 @@
     <NavUl>
         <NavLi href="/">Home</NavLi>
         <NavLi href="/map">Map</NavLi>
+        <NavLi href="/login">Login</NavLi>
         <WalletAdapter/>
     </NavUl>
 </Navbar>
