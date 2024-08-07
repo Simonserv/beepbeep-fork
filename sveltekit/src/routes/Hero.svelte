@@ -1,4 +1,4 @@
-<div class="container h-full v-full mx-auto flex justify-center items-center">
+<div class="h-screen flex items-center justify-center">
 	<div class="space-y-5">
 		<div>
 			<h1 class="h1 text-center">
