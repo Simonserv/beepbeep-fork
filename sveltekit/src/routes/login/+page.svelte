@@ -26,19 +26,19 @@
 
 <!-- `absolute m-auto left-0 right-0` is used for horizontally centering the card. -->
 <Card class="absolute m-auto left-0 right-0 mt-4">
-    <div class="grid space-y-4">
+    <div class="grid space-y-4 mx-10">
         <h5 class="text-xl text-center tracking-tight text-gray-900 dark:text-white">Sign in</h5>
         {#if socmed_buttons_shown_first}
-            <Button size="sm" color="light" class="mx-10"><FacebookSolid class="mr-2"/>Continue with Facebook</Button>
-            <Button size="sm" color="light" class="mx-10"><GoogleSolid class="mr-2"/>Continue with Google</Button>
-            <Button size="sm" color="light" class="mx-10"><XSolid class="mr-2"/>Continue with Twitter</Button>
+            <Button size="sm" color="light"><FacebookSolid class="mr-2"/>Continue with Facebook</Button>
+            <Button size="sm" color="light"><GoogleSolid class="mr-2"/>Continue with Google</Button>
+            <Button size="sm" color="light"><XSolid class="mr-2"/>Continue with Twitter</Button>
         {:else}
             <Input type="email" placeholder="Username, Email, or Phone number" required />
             <div class="grid space-y-1">
                 <Input type="password" placeholder="Password" required />
                 <span class="text-xs text-right">Forgot Password?</span>
             </div>
-            <Button size="sm" class="mx-10 mt-10">Sign in</Button>
+            <Button size="sm" class="mt-10">Sign in</Button>
         {/if}
         <div class="my-8"/> <!-- extra vertical space -->
 
@@ -49,7 +49,7 @@
 
         <div class="grid space-y-1 !mt-6">
             {#if socmed_buttons_shown_first}
-                <Button size="sm" class="mx-10 mt-6" on:click={switch_login_views}>Sign in with password</Button>
+                <Button size="sm" class="mt-6" on:click={switch_login_views}>Sign in with password</Button>
             {:else}
                 <div class="flex justify-center gap-2">
                     <Button pill={true} color="light" class="!p-2"><FacebookSolid/></Button>
