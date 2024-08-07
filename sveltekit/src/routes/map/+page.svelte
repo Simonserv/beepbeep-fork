@@ -6,6 +6,8 @@
 
 <div class="overflow-hidden">
     <OpenLayersMap/>
+
+    <!-- Top left drawer-->
     <Button size="xs" color="light" class="absolute left-4 top-16"><DrawSquareOutline/></Button>
     <Dropdown>
         <DropdownItem>Dashboard</DropdownItem>
@@ -14,6 +16,7 @@
         <DropdownItem slot="footer">Sign out</DropdownItem>
     </Dropdown>
 
+    <!-- Top right button group -->
     <ButtonGroup class="*:!ring-primary-700 absolute right-4 top-16">
         <Button size="xs">
             <div class="flex space-x-4 rtl:space-x-reverse">
