@@ -49,9 +49,9 @@
 
         <div class="grid space-y-1 !mt-6">
             {#if socmed_buttons_shown_first}
-                <Button size="sm" class="mt-6" on:click={switch_login_views}>Sign in with password</Button>
+                <Button size="sm" class="mt-6 mb-2" on:click={switch_login_views}>Sign in with password</Button>
             {:else}
-                <div class="flex justify-center gap-2">
+                <div class="flex justify-center gap-2 mb-2">
                     <Button pill={true} color="light" class="!p-2"><FacebookSolid/></Button>
                     <Button pill={true} color="light" class="!p-2"><GoogleSolid/></Button>
                     <Button pill={true} color="light" class="!p-2"><XSolid/></Button>
