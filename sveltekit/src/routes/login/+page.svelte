@@ -1,6 +1,12 @@
 <script>
     import BeepbeepLogo from "./BeepbeepLogo.svelte";
-    import { Button, Card } from 'flowbite-svelte';
+    import { Button, Card, Input } from "flowbite-svelte";
+    import { FacebookSolid, GoogleSolid, XSolid } from "flowbite-svelte-icons";
+
+    let socmed_buttons_shown_first = true;
+    function switch_login_views() {
+        socmed_buttons_shown_first = !socmed_buttons_shown_first;
+    }
 </script>
 
 <!-- Logo + Name -->
@@ -22,17 +28,35 @@
 <Card class="absolute m-auto left-0 right-0 mt-4">
     <div class="grid space-y-4">
         <h5 class="text-xl text-center tracking-tight text-gray-900 dark:text-white">Sign in</h5>
-        <Button size="sm" color="light" class="mx-10">Continue with Facebook</Button>
-        <Button size="sm" color="light" class="mx-10">Continue with Google</Button>
-        <Button size="sm" color="light" class="mx-10">Continue with Twitter</Button>
+        {#if socmed_buttons_shown_first}
+            <Button size="sm" color="light" class="mx-10"><FacebookSolid class="mr-2"/>Continue with Facebook</Button>
+            <Button size="sm" color="light" class="mx-10"><GoogleSolid class="mr-2"/>Continue with Google</Button>
+            <Button size="sm" color="light" class="mx-10"><XSolid class="mr-2"/>Continue with Twitter</Button>
+        {:else}
+            <Input type="email" placeholder="Username, Email, or Phone number" required />
+            <div class="grid space-y-1">
+                <Input type="password" placeholder="Password" required />
+                <span class="text-xs text-right">Forgot Password?</span>
+            </div>
+            <Button size="sm" class="mx-10 mt-10">Sign in</Button>
+        {/if}
+        <div class="my-8"/> <!-- extra vertical space -->
 
         <div class="inline-flex items-center justify-center w-full">
-            <hr class="w-64 h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
+            <hr class="w-64 h-px bg-gray-200 border-0 dark:bg-gray-700"/>
             <span class="absolute px-3 font-medium text-gray-900 -translate-x-1/2 bg-white left-1/2 dark:text-white dark:bg-gray-800">OR</span>
         </div>
 
-        <div class="grid space-y-1">
-            <Button size="sm" class="mx-10">Sign in with password</Button>
+        <div class="grid space-y-1 !mt-6">
+            {#if socmed_buttons_shown_first}
+                <Button size="sm" class="mx-10 mt-6" on:click={switch_login_views}>Sign in with password</Button>
+            {:else}
+                <div class="flex justify-center gap-2">
+                    <Button pill={true} color="light" class="!p-2"><FacebookSolid/></Button>
+                    <Button pill={true} color="light" class="!p-2"><GoogleSolid/></Button>
+                    <Button pill={true} color="light" class="!p-2"><XSolid/></Button>
+                </div>
+            {/if}
             <h5 class="text-xs text-center tracking-tight">
                 Don't have an account?
                 <span class="text-orange-300">
