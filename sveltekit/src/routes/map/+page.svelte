@@ -1,6 +1,6 @@
 <script lang="ts">
     import { Avatar, Button, ButtonGroup, Card, Dropdown, DropdownItem } from "flowbite-svelte";
-    import { MapPinAltSolid, } from "flowbite-svelte-icons";
+    import { IconMapPinFilled } from "@tabler/icons-svelte";
     import { IconArrowsUpDown, IconShape, IconDotsVertical, IconPlus, IconWallet } from "@tabler/icons-svelte";
 
     import OpenLayersMap from "./OpenLayersMap.svelte";
@@ -61,9 +61,9 @@
         <div class="grid grid-cols-[1fr_3fr_1fr] mb-8">
             <!-- Left side -->
             <div class="grid grid-rows-3 justify-center">
-                <Button pill={true} class="!w-fit !h-fit !p-2" ><MapPinAltSolid class="h-4 w-4" /></Button>
+                <Button pill={true} class="!w-fit !h-fit !p-2" ><IconMapPinFilled class="h-4 w-4" /></Button>
                 <div class=""> <IconDotsVertical /> </div>
-                <Button pill={true} class="!w-fit !h-fit !p-2"><MapPinAltSolid class="h-4 w-4" /></Button>
+                <Button pill={true} class="!w-fit !h-fit !p-2"><IconMapPinFilled class="h-4 w-4" /></Button>
             </div>
 
             <!-- Middle side -->
