@@ -1,7 +1,6 @@
 <script lang="ts">
     import { Avatar, Button, ButtonGroup, Card, Dropdown, DropdownItem } from "flowbite-svelte";
     import { MapPinAltSolid, } from "flowbite-svelte-icons";
-    import { ArrowUpDownOutline, DrawSquareOutline, DotsVerticalOutline, PlusOutline, WalletOutline } from "flowbite-svelte-icons";
     import { IconArrowsUpDown, IconShape, IconDotsVertical, IconPlus, IconWallet } from "@tabler/icons-svelte";
 
     import OpenLayersMap from "./OpenLayersMap.svelte";

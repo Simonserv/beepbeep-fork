@@ -1,7 +1,6 @@
 <script>
     import BeepbeepLogo from "./BeepbeepLogo.svelte";
     import { Button, Card, Input } from "flowbite-svelte";
-    import { FacebookSolid, GoogleSolid, XSolid } from "flowbite-svelte-icons";
     import { IconBrandFacebookFilled, IconBrandGoogleFilled, IconBrandXFilled } from "@tabler/icons-svelte";
 
     let socmed_buttons_shown_first = true;
