@@ -2,6 +2,7 @@
     import BeepbeepLogo from "./BeepbeepLogo.svelte";
     import { Button, Card, Input } from "flowbite-svelte";
     import { FacebookSolid, GoogleSolid, XSolid } from "flowbite-svelte-icons";
+    import { IconBrandFacebookFilled, IconBrandGoogleFilled, IconBrandXFilled } from "@tabler/icons-svelte";
 
     let socmed_buttons_shown_first = true;
     function switch_login_views() {
@@ -29,9 +30,9 @@
     <div class="grid space-y-4 mx-10">
         <h5 class="text-xl text-center tracking-tight text-gray-900 dark:text-white">Sign in</h5>
         {#if socmed_buttons_shown_first}
-            <Button size="sm" color="light"><FacebookSolid class="mr-2"/>Continue with Facebook</Button>
-            <Button size="sm" color="light"><GoogleSolid class="mr-2"/>Continue with Google</Button>
-            <Button size="sm" color="light"><XSolid class="mr-2"/>Continue with Twitter</Button>
+            <Button size="sm" color="light"><IconBrandFacebookFilled class="mr-2"/>Continue with Facebook</Button>
+            <Button size="sm" color="light"><IconBrandGoogleFilled class="mr-2"/>Continue with Google</Button>
+            <Button size="sm" color="light"><IconBrandXFilled class="mr-2"/>Continue with Twitter</Button>
         {:else}
             <Input type="email" placeholder="Username, Email, or Phone number" required />
             <div class="grid space-y-1">
@@ -52,9 +53,9 @@
                 <Button size="sm" class="mt-6 mb-2" on:click={switch_login_views}>Sign in with password</Button>
             {:else}
                 <div class="flex justify-center gap-2 mb-2">
-                    <Button pill={true} color="light" class="!p-2"><FacebookSolid/></Button>
-                    <Button pill={true} color="light" class="!p-2"><GoogleSolid/></Button>
-                    <Button pill={true} color="light" class="!p-2"><XSolid/></Button>
+                    <Button pill={true} color="light" class="!p-2"><IconBrandFacebookFilled/></Button>
+                    <Button pill={true} color="light" class="!p-2"><IconBrandGoogleFilled/></Button>
+                    <Button pill={true} color="light" class="!p-2"><IconBrandXFilled/></Button>
                 </div>
             {/if}
             <h5 class="text-xs text-center tracking-tight">

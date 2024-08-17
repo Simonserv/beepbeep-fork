@@ -2,6 +2,8 @@
     import { Avatar, Button, ButtonGroup, Card, Dropdown, DropdownItem } from "flowbite-svelte";
     import { MapPinAltSolid, } from "flowbite-svelte-icons";
     import { ArrowUpDownOutline, DrawSquareOutline, DotsVerticalOutline, PlusOutline, WalletOutline } from "flowbite-svelte-icons";
+    import { IconArrowsUpDown, IconShape, IconDotsVertical, IconPlus, IconWallet } from "@tabler/icons-svelte";
+
     import OpenLayersMap from "./OpenLayersMap.svelte";
 
     const BUTTON_GRID = {
@@ -28,7 +30,7 @@
 
     <div class="grid grid-cols-2">
         <!-- Top left drawer-->
-        <Button size="xs" color="light" class="absolute left-4 top-4"><DrawSquareOutline/></Button>
+        <Button size="xs" color="light" class="absolute left-4 top-4"><IconShape/></Button>
         <Dropdown>
             <DropdownItem>Dashboard</DropdownItem>
             <DropdownItem>Settings</DropdownItem>
@@ -44,8 +46,8 @@
                 </div>
             </Button>
             <Button size="xs" color="light" disabled >1020</Button>
-            <Button size="xs" color="light"><PlusOutline/></Button>
-            <Button size="xs" color="primary"><WalletOutline/></Button>
+            <Button size="xs" color="light"><IconPlus/></Button>
+            <Button size="xs" color="primary"><IconWallet/></Button>
         </ButtonGroup>
     </div>
 
@@ -61,7 +63,7 @@
             <!-- Left side -->
             <div class="grid grid-rows-3 justify-center">
                 <Button pill={true} class="!w-fit !h-fit !p-2" ><MapPinAltSolid class="h-4 w-4" /></Button>
-                <div class=""> <DotsVerticalOutline /> </div>
+                <div class=""> <IconDotsVertical /> </div>
                 <Button pill={true} class="!w-fit !h-fit !p-2"><MapPinAltSolid class="h-4 w-4" /></Button>
             </div>
 
@@ -99,7 +101,7 @@
             <!-- Right side -->
             <div class="grid grid-rows-3">
                 <div></div>
-                <button on:click={switch_location_inputs}> <ArrowUpDownOutline on:click={switch_location_inputs} /> </button>
+                <button on:click={switch_location_inputs}> <IconArrowsUpDown on:click={switch_location_inputs} /> </button>
                 <div></div>
             </div>
         </div>
