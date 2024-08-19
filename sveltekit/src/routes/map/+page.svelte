@@ -62,7 +62,7 @@
             <!-- Left side -->
             <div class="grid grid-rows-3 justify-center">
                 <Button pill={true} class="!w-fit !h-fit !p-2" ><IconMapPinFilled class="h-4 w-4" /></Button>
-                <div class=""> <IconDotsVertical /> </div>
+                <div class="!w-fit !h-fit !p-2"> <IconDotsVertical class="w-4 h-4" /> </div>
                 <Button pill={true} class="!w-fit !h-fit !p-2"><IconMapPinFilled class="h-4 w-4" /></Button>
             </div>
 
@@ -100,7 +100,7 @@
             <!-- Right side -->
             <div class="grid grid-rows-3">
                 <div></div>
-                <button on:click={switch_location_inputs}> <IconArrowsUpDown on:click={switch_location_inputs} /> </button>
+                <button on:click={switch_location_inputs}> <IconArrowsUpDown on:click={switch_location_inputs} class="h-4 w-4" /> </button>
                 <div></div>
             </div>
         </div>
