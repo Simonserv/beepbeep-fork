@@ -22,6 +22,22 @@
         source_location_first = !source_location_first;
         console.log(source_location_first);
     }
+
+    let is_searching_source = false;
+    let is_searching_destination = false;
+
+    function show_search_card(location: string) {
+        if(location=="source") {
+            is_searching_source = true;
+            is_searching_destination = false;
+            console.log("source");
+        } else {
+            is_searching_source = false;
+            is_searching_destination = true;
+            console.log("destination");
+        }
+    }
+
 </script>
 
 <div class="overflow-hidden h-screen relative flex z-0">
@@ -57,6 +73,11 @@
         + current location buttons
         + suggested travel destination
     -->
+    {#if is_searching_source && !is_searching_destination}
+    <h1>source card</h1>
+    {:else if !is_searching_source && is_searching_destination}
+    <h1>destination_card</h1>
+    {:else}
     <Card class="absolute m-auto bottom-4 left-0 right-0 mt-4">
         <div class="grid grid-cols-[1fr_3fr_1fr] mb-8">
             <!-- Left side -->
@@ -69,14 +90,14 @@
             <!-- Middle side -->
             <div class="grid grid-rows-3">
                 {#if source_location_first}
-                <Button pill={true} color="alternative" size="xs">
+                <Button pill={true} color="alternative" size="xs" on:click={() => show_search_card("destination")}>
                     <div class="text-xs">
                         <span>Where to?</span>
                         <span>Choose destination</span>
                     </div>
                 </Button>
                 <div></div>
-                <Button pill={true} color="alternative" size="xs">
+                <Button pill={true} color="alternative" size="xs" on:click={() => show_search_card("source")}>
                     <div class="text-xs">
                         <span>Choose starting location</span>
                     </div>
@@ -122,5 +143,6 @@
             {/each}
         </div>
     </Card>
+    {/if}
 
 </div>
