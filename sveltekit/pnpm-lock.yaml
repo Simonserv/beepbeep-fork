@@ -32,6 +32,9 @@ importers:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^3.0.0
         version: 3.1.1(svelte@4.2.18)(vite@5.3.4(@types/node@20.14.11)(terser@5.31.3))
+      '@tabler/icons-svelte':
+        specifier: ^3.12.0
+        version: 3.12.0(svelte@4.2.18)
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.39)
@@ -1917,6 +1920,14 @@ packages:
 
   '@swc/helpers@0.5.12':
     resolution: {integrity: sha512-KMZNXiGibsW9kvZAO1Pam2JPTDBm+KSHMMHWdsyI/1DbIZjT2A6Gy3hblVXUMEDvUAKq+e0vL0X0o54owWji7g==}
+
+  '@tabler/icons-svelte@3.12.0':
+    resolution: {integrity: sha512-2Xrlwefzf7N5UQLU1Lj8YezCRXAU2nY3h85UVTyewURx9yAu2cBGJtJjcnAnbLgJB1Ny+cxviVWGeLaHsH2hFw==}
+    peerDependencies:
+      svelte: '>=3 <6 || >=5.0.0-next.0'
+
+  '@tabler/icons@3.12.0':
+    resolution: {integrity: sha512-Im37ar/mQkqLb6XUXsU7nOc4/66VB9/3KLuZ+6tUsJKHHNLaDUkYfCTNG3pnGDI03laByxVf5+umSNK2yPTx8A==}
 
   '@toruslabs/base-controllers@2.9.0':
     resolution: {integrity: sha512-rKc+bR4QB/wdbH0CxLZC5e2PUZcIgkr9yY7TMd3oIffDklaYBnsuC5ES2/rgK1aRUDRWz+qWbTwLqsY6PlT37Q==}
@@ -7883,6 +7894,13 @@ snapshots:
   '@swc/helpers@0.5.12':
     dependencies:
       tslib: 2.6.3
+
+  '@tabler/icons-svelte@3.12.0(svelte@4.2.18)':
+    dependencies:
+      '@tabler/icons': 3.12.0
+      svelte: 4.2.18
+
+  '@tabler/icons@3.12.0': {}
 
   '@toruslabs/base-controllers@2.9.0(@babel/runtime@7.24.8)(bufferutil@4.0.8)(utf-8-validate@5.0.10)':
     dependencies:
