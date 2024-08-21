@@ -115,7 +115,7 @@
 
         {#if form?.success}
             {#each form?.geocode_json as location}
-                <div>{JSON.stringify(location.display_name)}</div>
+                <Button color="light">{location.display_name}</Button>
             {/each}
         {/if}
     </Card>
