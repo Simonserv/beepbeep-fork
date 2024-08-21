@@ -1,9 +1,14 @@
 <script lang="ts">
-    import { Avatar, Button, ButtonGroup, Card, Dropdown, DropdownItem } from "flowbite-svelte";
+    import { enhance } from '$app/forms';
+
+    import { Avatar, Button, ButtonGroup, Card, Dropdown, DropdownItem, Input } from "flowbite-svelte";
     import { IconMapPinFilled } from "@tabler/icons-svelte";
-    import { IconArrowsUpDown, IconCircleFilled, IconShape, IconDotsVertical, IconPlus, IconWallet } from "@tabler/icons-svelte";
+    import { IconArrowLeft, IconArrowsUpDown, IconCircleFilled, IconShape, IconDotsVertical, IconPlus, IconWallet } from "@tabler/icons-svelte";
 
     import OpenLayersMap from "./OpenLayersMap.svelte";
+
+    // allows +page.svelte to access results of form actions
+    export let form;
 
     const BUTTON_GRID = {
         "Restaurant": "resto-icon",
@@ -36,6 +41,12 @@
             is_searching_destination = true;
             console.log("destination");
         }
+    }
+
+    function disable_search_card() {
+        is_searching_source = false;
+        is_searching_destination = false;
+        console.log("disabling search card");
     }
 
 </script>
@@ -72,11 +83,42 @@
         + start/end point
         + current location buttons
         + suggested travel destination
+        + popup search card when searching for locations (source/destination)
     -->
-    {#if is_searching_source && !is_searching_destination}
-    <h1>source card</h1>
-    {:else if !is_searching_source && is_searching_destination}
-    <h1>destination_card</h1>
+    {#if is_searching_source || is_searching_destination}
+    <Card class="absolute m-auto bottom-4 left-0 right-0 mt-4">
+        <div class="grid grid-cols-[1fr_5fr_1fr] mb-8 mx-2">
+            <button on:click={disable_search_card}>
+                <IconArrowLeft class="" />
+            </button>
+
+            <div></div>
+            <button class="text-end">
+                Done
+            </button>
+        </div>
+
+        <div class="grid grid-cols-[1fr_3fr] mb-8">
+            <div>
+                <Button pill={true} class="!w-fit !h-fit !p-2" ><IconCircleFilled class="h-4 w-4" /></Button>
+            </div>
+            <div>
+                <form method="POST" action="?/searchLocation" use:enhance>
+                    {#if is_searching_source}
+                        <Input name="search_input" id="large-input" size="sm" placeholder="Choose a starting location" />
+                    {:else if is_searching_destination}
+                        <Input name="search_input" id="large-input" size="sm" placeholder="Where to? Choose destination" />
+                    {/if}
+                </form>
+            </div>
+        </div>
+
+        {#if form?.success}
+            {#each form?.geocode_json as location}
+                <div>{JSON.stringify(location.display_name)}</div>
+            {/each}
+        {/if}
+    </Card>
     {:else}
     <Card class="absolute m-auto bottom-4 left-0 right-0 mt-4">
         <div class="grid grid-cols-[1fr_3fr_1fr] mb-8">
